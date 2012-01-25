@@ -1,0 +1,11 @@
+/target
+.DS_Store
+
+## generic files to ignore
+*~
+*.lock
+*.swp
+*.out
+.project
+.classpath
+.settings

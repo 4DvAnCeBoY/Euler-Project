@@ -10,6 +10,12 @@ public class Primes {
 	private Long actualMaxPrime = 2l;
 
 	private List<Long> primes = new ArrayList<Long>();
+	
+	public void findThePrimeByOrder(long orderOfPrime){
+		for (int i = 1; i < orderOfPrime; i++) {
+			findNextPrime();		
+		}
+	}
 
 	public void findNextPrime() {
 		Long candidate = actualMaxPrime + 1;

@@ -9,7 +9,7 @@ public class Primes {
 
 	private Long actualMaxPrime = 2l;
 
-	private List<Long> primes = new ArrayList<Long>();
+	private List<Long> primesBelowMaxPrime = new ArrayList<Long>();
 	
 	public void findThePrimeByOrder(long orderOfPrime){
 		for (int i = 1; i < orderOfPrime; i++) {
@@ -22,7 +22,7 @@ public class Primes {
 		while (!isPrime(candidate)) {
 			candidate = candidate + 1;
 		}
-		primes.add(actualMaxPrime);
+		primesBelowMaxPrime.add(actualMaxPrime);
 		actualMaxPrime = candidate;
 	}
 
@@ -65,13 +65,22 @@ public class Primes {
 	}
 
 	private void removeLastPrime() {
-		Long unusedPrime = primes.get(primes.size() - 1);
-		primes.remove(primes.size() - 1);
+		Long unusedPrime = primesBelowMaxPrime.get(primesBelowMaxPrime.size() - 1);
+		primesBelowMaxPrime.remove(primesBelowMaxPrime.size() - 1);
 		actualMaxPrime = unusedPrime;
 	}
 
 	public List<Long> getPrimes() {
-		return primes;
+		return primesBelowMaxPrime;
+	}
+
+	public long sumAllPrimes() {
+		long sum = 0;
+		for (Long prime : primesBelowMaxPrime) {
+			sum = sum + prime;
+		}
+		sum = sum + actualMaxPrime;
+		return sum;
 	}
 
 }

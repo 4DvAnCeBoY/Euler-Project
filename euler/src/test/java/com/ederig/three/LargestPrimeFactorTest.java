@@ -4,7 +4,9 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-public class LargestPrimeFactorTest {
+import com.ederig.utils.BaseTest;
+
+public class LargestPrimeFactorTest  extends BaseTest {
 
 	private LargestPrimeFactor largestPrimeFactor;
 
